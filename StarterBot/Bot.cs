@@ -41,15 +41,10 @@ namespace StarterBot
                 {
                     for (var yAxis = 0; yAxis < mapHeight;yAxis++)
                     {
-                        if(xAxis != 0)
-                        {
-                        return $"{xAxis},{yAxis},{2}";
-                        }
+                        return $"{xAxis},{yAxis},{1}";
                     }
                 }
             }
         }
-
-
     }
 }
