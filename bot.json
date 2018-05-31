@@ -1,0 +1,8 @@
+{
+	"author": "Eddy Khoza",
+	"email": "v-edkhoz@microsoft.com",
+	"nickName": "Eddyddy",
+	"botLocation": "/StarterBot/bin/Debug/netcoreapp2.0",
+	"botFileName": "StarterBot.dll",
+	"botLanguage": "c#core"
+}
