@@ -39,9 +39,16 @@ namespace StarterBot
             {
                 for (var xAxis = 0; xAxis < (mapWidth / 2); xAxis++)
                 {
-                    for (var yAxis = 0; yAxis < mapHeight;yAxis++)
+                    for (var yAxis = 0; yAxis <= mapHeight;yAxis++)
                     {
+                        if(xAxis % 2 == 0)
+                        {
+                        return $"{xAxis},{yAxis},{0}";
+                        }
+                        else
+                        {
                         return $"{xAxis},{yAxis},{1}";
+                        }
                     }
                 }
             }
