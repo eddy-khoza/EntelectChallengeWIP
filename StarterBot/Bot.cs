@@ -35,24 +35,32 @@ namespace StarterBot
 
         public string Run()
         {
-            if (myPlayer.Energy < defenseBuilding.Price || myPlayer.Energy < energyBuilding.Price || myPlayer.Energy < attackBuilding.Price)
+            var health = myPlayer.Health;
+            var emptyRows;
+
+            if (health > 5)
             {
                 for (var xAxis = 0; xAxis < (mapWidth / 2); xAxis++)
                 {
-                    for (var yAxis = 0; yAxis <= mapHeight; yAxis++)
+                    for (var yAxis = 0; yAxis < mapHeight; yAxis++)
                     {
-                        if (xAxis % 2 == 0)
+                        emptyRows = gameState.GameMap.Where(row => row[yAxis].Buildings.Count == 0).ToList();
+                        if (emptyRows == 0)
                         {
-                            return $"{xAxis},{yAxis},{0}";
+                            if (myPlayer.Energy >= defenseBuilding.Price)
+                            {
+                                return $"{xAxis},{yAxis},{0}";
+                            }
+                            else if (myPlayer.Energy >= energyBuilding.Price)
+                            {
+                                return $"{xAxis},{yAxis},{2}";
+                            }
                         }
-                        else
-                        {
-                            return $"{xAxis},{yAxis},{1}";
-                        }
+                        return $"";
                     }
                 }
             }
-            return "";
+            return $"";
         }
     }
 }
