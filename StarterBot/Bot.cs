@@ -56,7 +56,6 @@ namespace StarterBot
                                 return $"{xAxis},{yAxis},{2}";
                             }
                         }
-                        return $"";
                     }
                 }
             }
